@@ -10,39 +10,20 @@ import SwiftUI
 
 struct GenerePicker: View {
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Generes")
-                    .padding()
-                    .font(.system(size: 40))
+        VStack {
+            Text("Generes")
+                .padding()
+                .font(.system(size: 40))
+            
+            List(Generes.allCases) { genere in
+                GenereButton(genere: genere)
             }
-            VStack {
-                HStack {
-                    GenereButton(buttonTitle: "Action", buttonColor: .red) {}
-                    GenereButton(buttonTitle: "Comedy", buttonColor: .green) {}
-                }
-                
-                HStack {
-                    GenereButton(buttonTitle: "Action", buttonColor: .red) {}
-                    GenereButton(buttonTitle: "Comedy", buttonColor: .green) {}
-                }
-                
-                HStack {
-                    GenereButton(buttonTitle: "Action", buttonColor: .red) {}
-                    GenereButton(buttonTitle: "Comedy", buttonColor: .green) {}
-                }
-                
-                HStack {
-                    GenereButton(buttonTitle: "Action", buttonColor: .red) {}
-                    GenereButton(buttonTitle: "Comedy", buttonColor: .green) {}
-                }
-            }
+
         }
     }
 }
 
-
-
+ 
 struct GenerePickerPreview: PreviewProvider {
     static var previews: some View {
         GenerePicker()

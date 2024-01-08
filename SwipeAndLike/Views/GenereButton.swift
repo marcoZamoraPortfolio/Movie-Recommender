@@ -9,31 +9,29 @@ import Foundation
 import SwiftUI
 
 struct GenereButton: View {
-    var buttonTitle: String
-    var buttonColor: Color
-    let action: () -> Void
+    let genere: Generes
     var body: some View {
-        Button {
-            action()
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(buttonColor)
-                Text(buttonTitle)
-                    .font(.system(size: 30))
-                    .foregroundColor(.white)
-                    .bold()
+        VStack (alignment: .center) {
+            Button {
+                
+            } label: {
+                ZStack(){
+                    Image("ticket")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 80)
+                        .clipped()
+                        .padding(.leading, 80)
+                }
             }
         }
-        .padding(.all, 20)
     }
 }
 
-
 struct GenereButtonPreview: PreviewProvider {
+    
     static var previews: some View {
-        GenereButton(buttonTitle: "Action", buttonColor: .red) {
-            
-        }
+        GenereButton(genere: mockGenere)
+            .previewLayout(.sizeThatFits)
     }
 }
