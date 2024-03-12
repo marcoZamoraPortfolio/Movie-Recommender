@@ -12,27 +12,44 @@ struct StartView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Header Title
-                VStack {
-                    Text("Swipe")
-                        .font(.system(size: 50))
-                    Text("&")
-                        .font(.system(size: 50))
-                    Text("Like")
-                        .font(.system(size: 50))
-                }.padding(.top, 100)
-                Spacer()
-                // Login Form
-                Button {
+                ZStack {
+                    Capsule()
+                        .fill(.bar)
+                        .frame(width: 250, height: 250)
+                        .padding(.top, 20)
                     
+                    // Header Title
+                    VStack {
+                        Text("Swipe")
+                            .font(.system(size: 50))
+                            .foregroundColor(.red)
+                        Text("&")
+                            .font(.system(size: 50))
+                            .foregroundStyle(.black)
+                        Text("Like")
+                            .font(.system(size: 50))
+                            .foregroundStyle(.green)
+                    }
+                    .padding(.top, 100)
+                    .padding(.bottom, 75)
+                }
+                
+                // Link to all generes
+                NavigationLink {
+                    GenrePicker()
                 } label: {
                     Text("Start")
                         .font(.system(size: 42))
-                        .padding(.horizontal, 8)
-                        .frame(width: 200, height: 50)
+                        .padding(.leading, 8)
+                        .padding(.trailing, 8)
+                        .frame(height: 50)
                 }
                 .buttonStyle(.borderedProminent)
-                .padding(.bottom, 50)
+                .tint(.black)
+                .padding(.bottom, 105)
+                .padding(.leading, 8)
+                .padding(.trailing, 8)
+                .frame(width: .infinity)
             }
         }
     }

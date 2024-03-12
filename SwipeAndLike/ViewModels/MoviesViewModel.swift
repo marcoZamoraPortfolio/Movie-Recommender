@@ -11,7 +11,7 @@ class MoviesViewModel {
     
     func retrieveMovies(onSuccess: @escaping (MovieData) -> (), onFailure: @escaping (Error) -> ()) {
         let headers = [
-            "X-RapidAPI-Key": "d57d056e60mshab91d390c83e199p1dd2d6jsnd48b7023f960",
+            "X-RapidAPI-Key": SystemKeys.apiKey.rawValue,
             "X-RapidAPI-Host": "ott-details.p.rapidapi.com"
         ]
         let page = Int.random(in: 1..<15)
